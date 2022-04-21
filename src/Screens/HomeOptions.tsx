@@ -123,7 +123,6 @@ const HomeOptions = ({ onIndexChange }: any) => {
                   >
                     {item?.options.map((sub_item, sub_index) => {
                       const thisKey = item_key + `${sub_index}` + `${index}`;
-                      console.log("HEllo 2 => ", thisKey);
                       return (
                         <View
                           key={thisKey}
@@ -160,7 +159,6 @@ const HomeOptions = ({ onIndexChange }: any) => {
               {item?.list
                 ? item?.list.map((sub_item, sub_index) => {
                     const thisKey = item_key + `${sub_index}` + `${index}`;
-                    console.log("HEllo 2 => ", thisKey);
                     return (
                       <View
                         key={thisKey}
@@ -265,7 +263,6 @@ const HomeOptions = ({ onIndexChange }: any) => {
     <View style={{}}>
       {LIST.map((item, index) => {
         const date = "list_" + Math.floor(Date.now() / 1000) + index;
-        console.log("HEllo 1 => " + date);
         return (
           <ListView key={date} item={item} index={index} item_key={date} />
         );

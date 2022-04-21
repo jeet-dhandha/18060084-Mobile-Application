@@ -38,38 +38,40 @@ const Home = () => {
       ],
     };
   });
-  const HeaderOptions = (showIndex) => (
-    <View
-      style={{
-        justifyContent: "space-between",
-        flexDirection: "row",
-        paddingHorizontal: DefaultTheme.padding.extra_large * 1.5,
-        paddingVertical: DefaultTheme.padding.medium,
-        width: AppDimensions.width,
-      }}
-    >
-      <RoundButton leftIcon={<BackIcon />} />
-      <RoundButton
-        leftIcon={
-          showIndex ? (
-            <EditIcon />
-          ) : (
-            <View style={{ paddingLeft: DefaultTheme.padding.small }}>
+  const HeaderOptions = ({ showIndex }) => {
+    return (
+      <View
+        style={{
+          justifyContent: "space-between",
+          flexDirection: "row",
+          paddingHorizontal: DefaultTheme.padding.extra_large * 1.5,
+          paddingVertical: DefaultTheme.padding.medium,
+          width: AppDimensions.width,
+        }}
+      >
+        <RoundButton leftIcon={<BackIcon />} />
+        <RoundButton
+          leftIcon={
+            showIndex != null ? (
               <EditIcon />
-            </View>
-          )
-        }
-        textStyle={
-          showIndex
-            ? undefined
-            : {
-                fontSize: DefaultTheme.textSize.medium,
-              }
-        }
-        text={showIndex ? undefined : "Edit"}
-      />
-    </View>
-  );
+            ) : (
+              <View style={{ paddingLeft: DefaultTheme.padding.small }}>
+                <EditIcon />
+              </View>
+            )
+          }
+          textStyle={
+            showIndex != null
+              ? undefined
+              : {
+                  fontSize: DefaultTheme.textSize.medium,
+                }
+          }
+          text={showIndex != null ? undefined : "Edit"}
+        />
+      </View>
+    );
+  };
 
   const UserProfile = () => (
     <View
